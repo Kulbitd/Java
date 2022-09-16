@@ -3,7 +3,7 @@ package kulbaka;
 import java.util.Scanner;
 
 public class Pz0 {
-	public static int ex0() {
+	public static int ex1() {
 		try (Scanner in = new Scanner(System.in))
 		{
 			System.out.print("Input a equation [a/b]: ");
@@ -25,8 +25,23 @@ public class Pz0 {
 		return 0;
 		}
     }
+	
+	
+	public static double ex2()
+	{
+		try (Scanner in = new Scanner(System.in))
+		{
+			System.out.print("Input a side of a square : ");
+			double x = in.nextDouble();
+			double P = x * 4;
+			return P;
+		}
+	}
+	
+	
+	
 	public static void main(String[] args)
 	{
-		System.out.print(ex0());
+		System.out.print(ex2());
 	}
 }
