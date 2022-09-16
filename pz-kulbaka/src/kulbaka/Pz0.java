@@ -38,7 +38,16 @@ public class Pz0 {
 		}
 	}
 	
-	
+	public static double ex3()
+	{
+		try (Scanner in = new Scanner(System.in))
+		{
+			System.out.print("Input a side of a square : ");
+			double x = in.nextDouble();
+			double V = x * 2;
+			return V;
+		}
+	}
 	
 	public static void main(String[] args)
 	{
