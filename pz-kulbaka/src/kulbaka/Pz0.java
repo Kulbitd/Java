@@ -49,6 +49,19 @@ public class Pz0 {
 		}
 	}
 	
+	public static double ex4()
+	{
+		try (Scanner in = new Scanner(System.in))
+		{
+			System.out.print("Input a height above ground : ");
+			double h = in.nextDouble();
+			double R = 6350 ;
+			double d = Math.sqrt( h * ( 2 * R + h));
+			return d;
+		}
+	}
+	
+	
 	public static void main(String[] args)
 	{
 		System.out.print(ex2());
