@@ -10,5 +10,7 @@ public class pz1 {
 	public static double ex3_1_sum(double a, double b) {
 		return a + b;
 	}
-	public static double ex3_1_()
+	public static double ex3_1_multi(double a, double b) {
+		return a * b;
+	}
 }
