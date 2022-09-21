@@ -56,4 +56,14 @@ public class Pz1Test {
 	public void Pz1_4TestS4NotIsS5() {
 		assert Pz1.ex3_3("anwser", "answer") == 3;
 	}
+	
+	@Test
+	public void Pz1_4TestOddOk() {
+		assert Pz1.ex4(841) == 1;
+	}
+	
+	@Test
+	public void Pz1_4TestEvenOk() {
+		assert Pz1.ex4(840) == 1;
+	}
 }

@@ -56,6 +56,17 @@ public class Pz1 {
 		System.out.print(s1 + s3);
 		return 3;
 	}
+	public static int ex4(int a) {
+		while(true){
+			if (a == 2)
+				return 0;
+			if (a == 1)
+				return 1;
+			if (a > 2) {
+				a = a / 2;
+			}
+		}
+	}
 	
 	public static void main(String[] args) {
 		System.out.println(ex3_3("answer", "answer"));
