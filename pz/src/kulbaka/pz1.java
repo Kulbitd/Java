@@ -13,4 +13,7 @@ public class pz1 {
 	public static double ex3_1_multi(double a, double b) {
 		return a * b;
 	}
+	public static double ex3_1_sub(double a, double b) {
+		return a - b;
+	}
 }
