@@ -43,8 +43,22 @@ public class Pz1 {
 		}
 		return answer;
 	}
+
+	public static int ex3_3(String s4,String s5) {
+		String s1 = "Сложение первой и ";
+		String s2 = "второй строки ";
+		String s3 = "третий строки ";
+		if (s4 == s5.intern()) {
+			String answer = s1 + s2;
+			System.out.print(answer);
+			return 2;
+		}
+		System.out.print(s1 + s3);
+		return 3;
+	}
+	
 	public static void main(String[] args) {
-		System.out.println(ex3_2_even());
-		System.out.println(ex3_2_odd());
+		System.out.println(ex3_3("answer", "answer"));
+		System.out.println(ex3_3("anwseer", "answer"));
 	}
 }

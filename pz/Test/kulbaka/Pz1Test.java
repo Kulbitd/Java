@@ -41,9 +41,19 @@ public class Pz1Test {
 	public void Pz1_3TestSumOddOk() {
 		assert Pz1.ex3_2_odd() == 225;
 	}
+	
 	@Test
 	public void Pz1_3TestSumEvenOk() {
-		assert Pz1.ex3_2_even() == 240;
-		
+		assert Pz1.ex3_2_even() == 240;	
+	}
+	
+	@Test
+	public void Pz1_4TestS4IsS5() {
+		assert Pz1.ex3_3("answer", "answer") == 2;
+	}
+	
+	@Test
+	public void Pz1_4TestS4NotIsS5() {
+		assert Pz1.ex3_3("anwser", "answer") == 3;
 	}
 }
