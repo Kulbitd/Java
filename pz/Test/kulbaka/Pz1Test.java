@@ -34,5 +34,6 @@ public class Pz1Test {
 	@Test
 	public void Pz1TestSubNotOk() {
 		assert Pz1.ex3_1_sub(142, 12) == 12;
+		
 	}
 }
