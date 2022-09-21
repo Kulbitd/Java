@@ -66,4 +66,9 @@ public class Pz1Test {
 	public void Pz1_4TestEvenOk() {
 		assert Pz1.ex4(840) == 1;
 	}
+	
+	@Test
+	public void Pz1_5TestOk() {
+		assert Pz1.ex5() == 8779;
+	}
 }
