@@ -1,6 +1,6 @@
 package kulbaka;
 
-public class pz1 {
+public class Pz1 {
 	public static void ex2() {
 		System.out.println("         1");
 		System.out.println("       1 2 3");
