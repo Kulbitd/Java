@@ -69,7 +69,6 @@ public class Pz1 {
 	}
 	public static double ex5() {
 		double answer = 0;
-		double buff = 0;
 		double[] a = {1e20, 1e18, 1e15, -1e12, 1223, 3};
 		double[] b = {1e20,  -1e22, 1e13, 1e16, 2, 2111};
 		for (int i = 0;i < 6; i++) {
