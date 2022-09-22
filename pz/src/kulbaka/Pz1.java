@@ -77,7 +77,26 @@ public class Pz1 {
 		return answer;
 	}
 	
+	public static double ex6(double a,double b,double c) {
+		double D = Math.pow(b, 2) - 4 * a * c;
+		if (D < 0) {
+			System.out.printf("no solution");
+			return -1;}
+		if (D == 0) {
+			System.out.println(-b / 2 * a);
+			return -b / 2 * a;
+		}
+		else {
+			System.out.println((-b + Math.sqrt(D))/( 2 * a));
+			System.out.println((-b - Math.sqrt(D))/( 2 * a));
+			return (-b + Math.sqrt(D))/( 2 * a); // Возвращает максимальное значение (не знаю как по другому )
+		}
+		
+		
+		
+	}
+	
 	public static void main(String[] args) {
-		System.out.print(ex5());
+		System.out.print(ex6(4,0,36));
 	}
 }

@@ -71,4 +71,19 @@ public class Pz1Test {
 	public void Pz1_5TestOk() {
 		assert Pz1.ex5() == 8779;
 	}
+	
+	@Test
+	public void Pz1_6Test2SolutionOk() {
+		assert Pz1.ex6(3,-14,-5) == 5;
+	}
+	
+	@Test
+	public void Pz1_6TestNoSolutionOk() {
+		assert Pz1.ex6(4,0,36) == -1;
+	}
+	
+	@Test
+	public void Pz1_6Test1SolutionOk() {
+		assert Pz1.ex6(1,-10,25) == 5;
+	}
 }
