@@ -33,6 +33,22 @@ static class Points{
 		return false;
 	}
 	
+static class Circles {
+	double center_coordinate_x;
+	double center_coordinate_y;
+	double radius;
+	Circles(Points a, double r){
+		center_coordinate_x = a.coordinate_x;
+		center_coordinate_y = a.coordinate_y;
+		radius = r;
+	}
+	Circles(Points a){
+		center_coordinate_x = a.coordinate_x;
+		center_coordinate_y = a.coordinate_y;
+		radius = Math.random() * 100;
+	}
+}
+	
 	
 	
 }
