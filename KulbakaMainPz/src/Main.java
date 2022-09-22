@@ -1,5 +1,6 @@
 public class Main {
 	public static void main(String[] args) {
+		
         double[] buffP = {1, 2, 1.4, 2.1, -2.1, 0.5};
         double[] buffC = {2, 0, 1.6, 2, -1.2, -2};
         double[] buffR = {1, 2, 2.5};
@@ -11,7 +12,7 @@ public class Main {
         int j = 0;
         for (int i = 0; i < buffP.length ;i += 2) {
         	points[j] =  new Points(buffP[i], buffP[i+1]);
-        	points[j].toString();
+        	points[j].drow();
         	j++;
         }
         j = 0;
@@ -19,16 +20,9 @@ public class Main {
         	
         	pointsForCircles[j] =  new Points(buffC[i], buffC[i+1]);
         	circles[j] = new Circles( pointsForCircles[j], buffR[j] );
-        	System.out.println(circles[j].square());
+        	circles[j].drow();
+        	System.out.println("Площадь " + circles[j].square());
         	j++;
         }
-    }
-
-
-public interface IDrawable  {
-
-    public void swim();
-}
-	
-	
+	}
 }
