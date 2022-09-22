@@ -1,17 +1,14 @@
 
 public class pz2 {
 	public static void main(String[] args) {
-        
-        Points One = new Points(1, 3);        
-        Points Two = new Points(1, 3);
-        
-        Circles ONE = new Circles(One, 12);
-        Circles TWO = new Circles(Two, 12);
-        
-        System.out.println( ONE.toString() );
-        System.out.println( TWO.toString() );
-        System.out.println( ONE.equals(TWO) );
-        System.out.println( ONE.square() );
+        double[] buff = {1, 2, 1.4, 2.1, -2.1, 0.5};
+        Points[] ex = new Points[buff.length/2];
+        int j = 0;
+        for (int i = 0; i < buff.length ;i += 2) {
+        	ex[j] =  new Points(buff[i], buff[i+1]);
+        	ex[j].toString();
+        	j++;
+        }
     }
 static class Points{
 	double coordinate_x;
@@ -20,7 +17,7 @@ static class Points{
 		coordinate_x = Math.random() * 100;
 		coordinate_y = Math.random() * 100;
 	}
-	Points(int a,int b){
+	Points(double a,double b){
 		coordinate_x = a;
 		coordinate_y = b;
 	}
@@ -28,6 +25,7 @@ static class Points{
 	
 	public String toString() {
 		String string = "X : " + coordinate_x + " ; Y : " + coordinate_y;
+		System.out.println(string);
 		return string;
 	}
 	
