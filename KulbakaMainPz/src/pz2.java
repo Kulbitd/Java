@@ -2,13 +2,16 @@
 public class pz2 {
 	public static void main(String[] args) {
         
-        Points One = new Points(1, 3);
-        System.out.println( One.toString() );
-        
+        Points One = new Points(1, 3);        
         Points Two = new Points(1, 3);
-        System.out.println( Two.toString() );
         
-        System.out.println( One.equals(Two) );
+        Circles ONE = new Circles(One, 12);
+        Circles TWO = new Circles(Two, 12);
+        
+        System.out.println( ONE.toString() );
+        System.out.println( TWO.toString() );
+        System.out.println( ONE.equals(TWO) );
+        System.out.println( ONE.square() );
     }
 static class Points{
 	double coordinate_x;
@@ -21,6 +24,8 @@ static class Points{
 		coordinate_x = a;
 		coordinate_y = b;
 	}
+	
+	
 	public String toString() {
 		String string = "X : " + coordinate_x + " ; Y : " + coordinate_y;
 		return string;
@@ -31,8 +36,10 @@ static class Points{
 			return true;
 		}
 		return false;
-	}
-	
+	}	
+}	
+
+
 static class Circles {
 	double center_coordinate_x;
 	double center_coordinate_y;
@@ -47,9 +54,26 @@ static class Circles {
 		center_coordinate_y = a.coordinate_y;
 		radius = Math.random() * 100;
 	}
+	
+	
+	public String toString() {
+		String string = "X : " + center_coordinate_x + " ; Y : " + center_coordinate_y + " ; R : " + radius;
+		return string;
+	}
+	
+	public boolean equals(Circles a) {
+		if (center_coordinate_x == a.center_coordinate_x && center_coordinate_y == a.center_coordinate_y && radius == a.radius) {
+			return true;
+		}
+		return false;
+	}
+	
+	public double square() {
+		return Math.pow(radius, 2) * Math.PI;
+	}
+	
 }
 	
 	
 	
-}
 }
