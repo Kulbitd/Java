@@ -1,14 +1,17 @@
-class Points implements IDrawable {
+package mypac;
+
+
+public class Points implements IDrawable {
 	
 	double coordinate_x;
 	double coordinate_y;
 	
 	
-	Points(){
+	public Points(){
 		coordinate_x = Math.random() * 100;
 		coordinate_y = Math.random() * 100;
 	}
-	Points(double a,double b){
+	public Points(double a,double b){
 		coordinate_x = a;
 		coordinate_y = b;
 	}
