@@ -5,6 +5,8 @@ import java.util.Scanner;
 public class Main {
 	public static void main(String[] args) {
 		boolean work = true;
+		Points[] newpoints = new Points [99];
+		int numberpoint = 0;
 		while (work) {
 			Scanner in = new Scanner(System.in);
 			System.out.println("Для выхода из программы введите : 0");
@@ -21,6 +23,17 @@ public class Main {
 				work = false;
 				break;
 			case 1 :
+				System.out.print("Сколько переменных вы хотите добваить ? :");
+				int buff = in.nextInt();
+				for (int i = 0; i < buff; i++) {
+					System.out.print("X :");
+					double x = in.nextDouble();
+					System.out.print("Y :");
+					double y = in.nextDouble();
+					newpoints[numberpoint] = new Points(x,y); 
+				}
+					
+				
 				break;
 			case 2 :
 				break;

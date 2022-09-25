@@ -46,5 +46,13 @@ public class Circles implements IDrawable {
 		}
 		return false;
 	}
+	public void pointin() {
+		for (double i =  center_coordinate_x - radius;i < center_coordinate_x + radius;i ++) {
+			for (double j =  center_coordinate_y - radius;j < center_coordinate_y + radius;j ++) {
+				System.out.print("X : " + i + "; Y : "+ j + "/t");
+			}
+		}
+	}
+	
 	
 }
