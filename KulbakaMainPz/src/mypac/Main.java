@@ -4,9 +4,13 @@ import java.util.Scanner;
 
 public class Main {
 	public static void main(String[] args) {
-		boolean work = true;
+		
 		Points[] newpoints = new Points [99];
+		Circles[] newcirles = new Circles [99];
 		int numberpoint = 0;
+		int newcircles = 0;
+		
+		boolean work = true;
 		while (work) {
 			Scanner in = new Scanner(System.in);
 			System.out.println("Для выхода из программы введите : 0");
@@ -23,19 +27,27 @@ public class Main {
 				work = false;
 				break;
 			case 1 :
-				System.out.print("Сколько переменных вы хотите добваить ? :");
-				int buff = in.nextInt();
-				for (int i = 0; i < buff; i++) {
-					System.out.print("X :");
+				System.out.print("Сколько переменных вы хотите добваить ? : ");
+				int buffpoints = in.nextInt();
+				for (int i = 0; i < buffpoints; i++) {
+					System.out.print("X : ");
 					double x = in.nextDouble();
-					System.out.print("Y :");
+					System.out.print("Y : ");
 					double y = in.nextDouble();
 					newpoints[numberpoint] = new Points(x,y); 
 				}
-					
-				
 				break;
 			case 2 :
+				System.out.print("Сколько переменных вы хотите добваить ? : ");
+				int buffcircles = in.nextInt();
+				for (int i = 0; i < buffcircles; i++) {
+					System.out.print("X : ");
+					double x = in.nextDouble();
+					System.out.print("Y : ");
+					double y = in.nextDouble();
+					Points buffforcircles = new Points(x,y); 
+					
+				}
 				break;
 			case 3 :
 				break;
