@@ -8,7 +8,7 @@ public class Main {
 		Points[] newpoints = new Points [99];
 		Circles[] newcirles = new Circles [99];
 		int numberpoint = 0;
-		int newcircles = 0;
+		int numbercircles = 0;
 		
 		boolean work = true;
 		while (work) {
@@ -35,6 +35,7 @@ public class Main {
 					System.out.print("Y : ");
 					double y = in.nextDouble();
 					newpoints[numberpoint] = new Points(x,y); 
+					numberpoint ++;
 				}
 				break;
 			case 2 :
@@ -45,13 +46,22 @@ public class Main {
 					double x = in.nextDouble();
 					System.out.print("Y : ");
 					double y = in.nextDouble();
+					System.out.print("R : ");
+					double r = in.nextDouble();
 					Points buffforcircles = new Points(x,y); 
-					
+					newcirles[numbercircles] = new Circles (buffforcircles,r);
+					numbercircles++;
 				}
 				break;
 			case 3 :
+				for (int i = 0; i < numberpoint;i++) {
+					System.out.print(newpoints[i]);
+				}
 				break;
 			case 4 :
+				for (int i = 0; i < numbercircles;i++) {
+					System.out.print(newcirles[i]);
+				}
 				break;
 			case 5 :
 				break;
