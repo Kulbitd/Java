@@ -1,6 +1,7 @@
 package mypac;
 
 import java.util.Scanner;
+import java.util.List;
 
 public class Main {
 	public static void main(String[] args) {
@@ -12,6 +13,8 @@ public class Main {
 		
 		boolean work = true;
 		while (work) {
+			System.out.println();
+			System.out.println();
 			Scanner in = new Scanner(System.in);
 			System.out.println("Для выхода из программы введите : 0");
 			System.out.println("Для добавление данных в список точек введите : 1");
@@ -34,6 +37,7 @@ public class Main {
 					double x = in.nextDouble();
 					System.out.print("Y : ");
 					double y = in.nextDouble();
+					System.out.println("Точка X :" + x + " ; Y : " + y + " добавлена");
 					newpoints[numberpoint] = new Points(x,y); 
 					numberpoint ++;
 				}
@@ -48,6 +52,7 @@ public class Main {
 					double y = in.nextDouble();
 					System.out.print("R : ");
 					double r = in.nextDouble();
+					System.out.println("Окружность с центров в точке  X :" + x + " ; Y : " + y + " и с радиусом  R : " + r + "добавлена");
 					Points buffforcircles = new Points(x,y); 
 					newcirles[numbercircles] = new Circles (buffforcircles,r);
 					numbercircles++;
@@ -55,15 +60,36 @@ public class Main {
 				break;
 			case 3 :
 				for (int i = 0; i < numberpoint;i++) {
-					System.out.print(newpoints[i]);
+					newpoints[i].drow();;
 				}
 				break;
 			case 4 :
 				for (int i = 0; i < numbercircles;i++) {
-					System.out.print(newcirles[i]);
+					newcirles[i].drow();
 				}
 				break;
 			case 5 :
+				System.out.println("Вывести список или удалить по параметрам? [1/2 соотвественно] : ");
+				int oneortwo = in.nextInt();
+				switch(oneortwo) {
+				case 1:
+					for (int i = 0; i < numberpoint;i++) {
+						newpoints[i].drow();;
+					}
+					System.out.println("Введите индекс точки, которую хотите удалить (начиная с 1) : ");
+					int index = in.nextInt() - 1;
+					if (index  > numberpoint - 1) {
+						System.out.println("Введен неверный индекс");
+						break;
+					}	
+					newpoints[index] = newpoints[numberpoint-1];
+					newpoints[numberpoint-1] = null;
+					numberpoint --;
+					
+					
+				
+					
+				}
 				break;
 			case 6 :
 				break;
