@@ -82,7 +82,9 @@ public class Main {
 						System.out.println("Введен неверный индекс");
 						break;
 					}	
-					newpoints[index] = newpoints[numberpoint-1];
+					for (int j = index;j < numberpoint;j++) {
+						newpoints[j] = newpoints[j+1];
+					}
 					newpoints[numberpoint-1] = null;
 					numberpoint --;
 					break;
@@ -92,7 +94,9 @@ public class Main {
 					double y_y = in.nextDouble();
 					for (int i = 0; i < numberpoint;i++) {
 						if( newpoints[i].coordinate_x == x_x && newpoints[i].coordinate_y == y_y) {
-							newpoints[i] = newpoints[numberpoint-1];
+							for (int j = i;j < numberpoint;j++) {
+								newpoints[j] = newpoints[j+1];
+							}
 							newpoints[numberpoint-1] = null;
 							numberpoint --;
 							break;
