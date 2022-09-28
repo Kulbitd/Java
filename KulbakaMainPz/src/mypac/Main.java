@@ -21,8 +21,8 @@ public class Main {
 			System.out.println("Для добавление данных в список окружности введите : 2");
 			System.out.println("Для вывода на экран содержимого списка точек введите : 3");
 			System.out.println("Для вывода на экран содержимого списка окружностей введите : 4");
-			System.out.println("Для удаления точек из списка точек введите : 5");
-			System.out.println("Для удаления точек из списка точек введите : 6");
+			System.out.println("Для удаления точки введите : 5");
+			System.out.println("Для удаления окружности  введите : 6");
 			System.out.println("Для вывода всех точек находящихся в окружности введите: 7");
 	        int num = in.nextInt();
 			switch(num) {
@@ -52,7 +52,7 @@ public class Main {
 					double y = in.nextDouble();
 					System.out.print("R : ");
 					double r = in.nextDouble();
-					System.out.println("Окружность с центров в точке  X :" + x + " ; Y : " + y + " и с радиусом  R : " + r + "добавлена");
+					System.out.println("Окружность с центров в точке  X :" + x + " ; Y : " + y + " и с радиусом  R : " + r + " добавлена");
 					Points buffforcircles = new Points(x,y); 
 					newcirles[numbercircles] = new Circles (buffforcircles,r);
 					numbercircles++;
@@ -85,19 +85,60 @@ public class Main {
 					newpoints[index] = newpoints[numberpoint-1];
 					newpoints[numberpoint-1] = null;
 					numberpoint --;
-					
-					
-				
-					
+					break;
+				case 2:
+					System.out.println("Введите параметры удаляемой точки");
+					double x_x = in.nextDouble();
+					double y_y = in.nextDouble();
+					for (int i = 0; i < numberpoint;i++) {
+						if( newpoints[i].coordinate_x == x_x && newpoints[i].coordinate_y == y_y) {
+							newpoints[i] = newpoints[numberpoint-1];
+							newpoints[numberpoint-1] = null;
+							numberpoint --;
+							break;
+						}
+					}
 				}
-				break;
+					break;
 			case 6 :
-				break;
+				System.out.println("Вывести список или удалить по параметрам? [1/2 соотвественно] : ");
+				int oneortwoсcircles = in.nextInt();
+				switch(oneortwoсcircles) {
+				case 1:
+					for (int i = 0; i < numbercircles;i++) {
+						newcirles[i].drow();
+					}
+					System.out.println("Введите индекс точки, которую хотите удалить (начиная с 1) : ");
+					int index = in.nextInt() - 1;
+					if (index  > numbercircles - 1) {
+						System.out.println("Введен неверный индекс");
+						break;
+					}
+					newcirles[index] = newcirles[numbercircles-1];
+					newcirles[numbercircles-1] = null;
+					numbercircles --;
+					break;
+				case 2:
+					System.out.println("Введите параметры удаляемой точки X , Y , R");
+					double x_x = in.nextDouble();
+					double y_y = in.nextDouble();
+					double r_r = in.nextDouble();
+					for (int i = 0; i < numbercircles;i++) {
+						if( newcirles[i].center_coordinate_x == x_x && newcirles[i].center_coordinate_y == y_y && newcirles[i].radius == r_r) {
+							newcirles[i] = newcirles[numbercircles-1];
+							newcirles[numbercircles-1] = null;
+							numbercircles --;
+							break;
+						}
+					}
+					
+					break;
+				}
 			case 7 :
 				break;
 			
-			}
+				}
 			
-		}
+			}
 	}
 }
