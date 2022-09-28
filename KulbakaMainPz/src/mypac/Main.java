@@ -13,9 +13,8 @@ public class Main {
 		
 		boolean work = true;
 		while (work) {
-			System.out.println();
-			System.out.println();
 			Scanner in = new Scanner(System.in);
+			;System.out.println();System.out.println();
 			System.out.println("Для выхода из программы введите : 0");
 			System.out.println("Для добавление данных в список точек введите : 1");
 			System.out.println("Для добавление данных в список окружности введите : 2");
@@ -24,6 +23,7 @@ public class Main {
 			System.out.println("Для удаления точки введите : 5");
 			System.out.println("Для удаления окружности  введите : 6");
 			System.out.println("Для вывода всех точек находящихся в окружности введите: 7");
+			System.out.print("Ваш выбор : ");
 	        int num = in.nextInt();
 			switch(num) {
 			case 0 :
@@ -114,7 +114,9 @@ public class Main {
 						System.out.println("Введен неверный индекс");
 						break;
 					}
-					newcirles[index] = newcirles[numbercircles-1];
+					for (int j = index;j<numbercircles;j++) {
+						newcirles[j] = newcirles[j+1];
+						}
 					newcirles[numbercircles-1] = null;
 					numbercircles --;
 					break;
@@ -125,7 +127,9 @@ public class Main {
 					double r_r = in.nextDouble();
 					for (int i = 0; i < numbercircles;i++) {
 						if( newcirles[i].center_coordinate_x == x_x && newcirles[i].center_coordinate_y == y_y && newcirles[i].radius == r_r) {
-							newcirles[i] = newcirles[numbercircles-1];
+							for (int j = i;j<numbercircles;j++) {
+								newcirles[j] = newcirles[j+1];
+							}
 							newcirles[numbercircles-1] = null;
 							numbercircles --;
 							break;
@@ -136,6 +140,8 @@ public class Main {
 				}
 			case 7 :
 				break;
+			default:
+				System.out.println("Введен неверный параметр");
 			
 				}
 			
