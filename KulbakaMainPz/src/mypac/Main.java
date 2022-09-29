@@ -1,8 +1,6 @@
 package mypac;
 
 import java.util.Scanner;
-import java.util.Arrays;
-
 
 public class Main {
 	public static void main(String[] args) {
@@ -69,18 +67,48 @@ public class Main {
 					}
 				break;
 				case 2:
-					Points[] bufffornotsort = new Points[newpoints.length];
-					System.arraycopy(newpoints, 0, bufffornotsort, 0, bufffornotsort.length);
-					bufffornotsort = sortincrease(bufffornotsort,numberpoint);
+					Points[] bufffornotsort1 = new Points[newpoints.length];
+					System.arraycopy(newpoints, 0, bufffornotsort1, 0, bufffornotsort1.length);
+					bufffornotsort1 = Sort.pointsortincrease(bufffornotsort1,numberpoint);
 					for (int i = 0; i < numberpoint;i++) {
-						bufffornotsort[i].drow();;
+						bufffornotsort1[i].drow();;
 					}
 					break;
+				case 3:
+					Points[] bufffornotsort2 = new Points[newpoints.length];
+					System.arraycopy(newpoints, 0, bufffornotsort2, 0, bufffornotsort2.length);
+					bufffornotsort2 = Sort.pointsort(bufffornotsort2,numberpoint);
+					for (int i = 0; i < numberpoint;i++) {
+						bufffornotsort2[i].drow();;
+					}
 				}
+				break;
 			case 4 :
+			System.out.print("Как вывести массив первозданный в порядке увелечения / уменьшение [1,2/3]");
+			int choicecir = in.nextInt();
+			switch(choicecir) {
+			case 1:
 				for (int i = 0; i < numbercircles;i++) {
 					newcirles[i].drow();
 				}
+			break;
+			case 2:
+				Circles[] bufffornotsort1 = new Circles[newcirles.length];
+				System.arraycopy(newcirles, 0, bufffornotsort1, 0, bufffornotsort1.length);
+				bufffornotsort1 = Sort.circlessortincrease(bufffornotsort1,numberpoint);
+				for (int i = 0; i < numberpoint;i++) {
+					bufffornotsort1[i].drow();;
+				}
+				break;
+			case 3:
+				Circles[] bufffornotsort2 = new Circles[newcirles.length];
+				System.arraycopy(newcirles, 0, bufffornotsort2, 0, bufffornotsort2.length);
+				bufffornotsort2 = Sort.circlessort(bufffornotsort2,numberpoint);
+				for (int i = 0; i < numberpoint;i++) {
+					bufffornotsort2[i].drow();;
+				}
+				break;
+			}
 				break;
 			case 5 :
 				System.out.println("Вывести список или удалить по параметрам? [1/2 соотвественно] : ");
@@ -162,30 +190,6 @@ public class Main {
 				System.out.println("Введен неверный параметр");
 				}
 			
-			}
-	}
-	public static Points[] sortincrease(Points[] mas,int numberpoint){
-		boolean swapped = true;
-		while(swapped)
-		{	
-			numberpoint --;
-			swapped = false;
-			
-			for(int i = 0; i < numberpoint; i++)
-			{
-				if(mas[i].coordinate_x > mas[i + 1].coordinate_x)
-				{
-					Points buff = mas[i];
-					mas[i] = mas[i + 1];
-					mas[i + 1] = buff;
-					swapped = true;
-				}
-			}
-			
-			if(swapped == false)
-				break;
 		}
-		return mas;
-		
 	}
 }
