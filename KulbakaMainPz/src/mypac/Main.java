@@ -1,7 +1,8 @@
 package mypac;
 
 import java.util.Scanner;
-import java.util.List;
+import java.util.Arrays;
+
 
 public class Main {
 	public static void main(String[] args) {
@@ -59,10 +60,23 @@ public class Main {
 				}
 				break;
 			case 3 :
-				for (int i = 0; i < numberpoint;i++) {
-					newpoints[i].drow();;
-				}
+				System.out.print("Как вывести массив первозданный в порядке увелечения / уменьшение [1,2/3]");
+				int choice = in.nextInt();
+				switch(choice) {
+				case 1:
+					for (int i = 0; i < numberpoint;i++) {
+						newpoints[i].drow();;
+					}
 				break;
+				case 2:
+					Points[] bufffornotsort = new Points[newpoints.length];
+					System.arraycopy(newpoints, 0, bufffornotsort, 0, bufffornotsort.length);
+					bufffornotsort = sortincrease(bufffornotsort,numberpoint);
+					for (int i = 0; i < numberpoint;i++) {
+						bufffornotsort[i].drow();;
+					}
+					break;
+				}
 			case 4 :
 				for (int i = 0; i < numbercircles;i++) {
 					newcirles[i].drow();
@@ -146,9 +160,32 @@ public class Main {
 				break;
 			default:
 				System.out.println("Введен неверный параметр");
-			
 				}
 			
 			}
+	}
+	public static Points[] sortincrease(Points[] mas,int numberpoint){
+		boolean swapped = true;
+		while(swapped)
+		{	
+			numberpoint --;
+			swapped = false;
+			
+			for(int i = 0; i < numberpoint; i++)
+			{
+				if(mas[i].coordinate_x > mas[i + 1].coordinate_x)
+				{
+					Points buff = mas[i];
+					mas[i] = mas[i + 1];
+					mas[i + 1] = buff;
+					swapped = true;
+				}
+			}
+			
+			if(swapped == false)
+				break;
+		}
+		return mas;
+		
 	}
 }
