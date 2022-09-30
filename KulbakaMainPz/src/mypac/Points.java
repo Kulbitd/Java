@@ -3,23 +3,18 @@ package mypac;
 
 public class Points implements IDrawable {
 	
-	double coordinate_x;
-	double coordinate_y;
+	int coordinate_x;
+	int coordinate_y;
 	
 	
-	public Points(){
-		coordinate_x = Math.random() * 100;
-		coordinate_y = Math.random() * 100;
-	}
-	public Points(double a,double b){
+	public Points(int a,int b){
 		coordinate_x = a;
 		coordinate_y = b;
 	}
 	
 	
 	public String toString() {
-		String string = "X : " + coordinate_x + " ; Y : " + coordinate_y;
-		System.out.println(string);
+		String string = coordinate_x +","+ coordinate_y;
 		return string;
 	}
 	public boolean equals(Points a) {

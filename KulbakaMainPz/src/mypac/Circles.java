@@ -3,26 +3,20 @@ package mypac;
 
 public class Circles implements IDrawable {
 	
-	double center_coordinate_x;
-	double center_coordinate_y;
-	double radius;
+	int center_coordinate_x;
+	int center_coordinate_y;
+	int radius;
 	
 	
-	public Circles(Points a, double r){
+	public Circles(Points a, int r){
 		center_coordinate_x = a.coordinate_x;
 		center_coordinate_y = a.coordinate_y;
 		radius = r;
 	}
-	public Circles(Points a){
-		center_coordinate_x = a.coordinate_x;
-		center_coordinate_y = a.coordinate_y;
-		radius = Math.random() * 100;
-	}
 	
 	
 	public String toString() {
-		String string = "X : " + center_coordinate_x + " ; Y : " + center_coordinate_y + " ; R : " + radius;
-		System.out.println(string);
+		String string =  center_coordinate_x  +","+ center_coordinate_y +","+ radius;
 		return string;
 	}
 	public boolean equals(Circles a) {

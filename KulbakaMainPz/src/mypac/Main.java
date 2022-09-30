@@ -27,15 +27,17 @@ public class Main {
 			switch(num) {
 			case 0 :
 				work = false;
+				WriteAndReade.writespoints(newpoints,newcirles,numberpoint,numbercircles);
+				
 				break;
 			case 1 :
 				System.out.print("Сколько переменных вы хотите добваить ? : ");
 				int buffpoints = in.nextInt();
 				for (int i = 0; i < buffpoints; i++) {
 					System.out.print("X : ");
-					double x = in.nextDouble();
+					int x = in.nextInt();
 					System.out.print("Y : ");
-					double y = in.nextDouble();
+					int y = in.nextInt();
 					System.out.println("Точка X :" + x + " ; Y : " + y + " добавлена");
 					newpoints[numberpoint] = new Points(x,y); 
 					numberpoint ++;
@@ -46,11 +48,11 @@ public class Main {
 				int buffcircles = in.nextInt();
 				for (int i = 0; i < buffcircles; i++) {
 					System.out.print("X : ");
-					double x = in.nextDouble();
+					int x = in.nextInt();
 					System.out.print("Y : ");
-					double y = in.nextDouble();
+					int y = in.nextInt();
 					System.out.print("R : ");
-					double r = in.nextDouble();
+					int r = in.nextInt();
 					System.out.println("Окружность с центров в точке  X :" + x + " ; Y : " + y + " и с радиусом  R : " + r + " добавлена");
 					Points buffforcircles = new Points(x,y); 
 					newcirles[numbercircles] = new Circles (buffforcircles,r);
