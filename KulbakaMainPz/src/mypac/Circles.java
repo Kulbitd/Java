@@ -16,7 +16,7 @@ public class Circles implements IDrawable {
 	
 	
 	public String toString() {
-		String string =  center_coordinate_x  +","+ center_coordinate_y +","+ radius;
+		String string =  center_coordinate_x  +","+ center_coordinate_y +","+ radius+",";
 		return string;
 	}
 	public boolean equals(Circles a) {
@@ -30,6 +30,9 @@ public class Circles implements IDrawable {
 	}
 	public void drow() {
 		System.out.println("Окружность. X : " + center_coordinate_x + " ; Y : " + center_coordinate_y + " ; R : " + radius);
+	}
+	public String drowuser() {
+		return "Окружность. X : " + center_coordinate_x + " ; Y : " + center_coordinate_y + " ; R : " + radius;
 	}
 	public boolean InOrNot(double x, double y) {
 		if (center_coordinate_x - radius < x  && x < center_coordinate_x + radius ) {

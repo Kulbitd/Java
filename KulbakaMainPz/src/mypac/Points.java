@@ -14,7 +14,7 @@ public class Points implements IDrawable {
 	
 	
 	public String toString() {
-		String string = coordinate_x +","+ coordinate_y;
+		String string = coordinate_x +","+ coordinate_y + ",";
 		return string;
 	}
 	public boolean equals(Points a) {
@@ -26,5 +26,8 @@ public class Points implements IDrawable {
 	public void drow() {
 		System.out.println("Точка. X : " + coordinate_x + " ; Y : " + coordinate_y);
 	}	
+	public String drowuser() {
+		return "Точка. X : " + coordinate_x + " ; Y : " + coordinate_y;
+	}
 }
 

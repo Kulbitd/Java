@@ -7,9 +7,34 @@ public class Main {
 		
 		Points[] newpoints = new Points [99];
 		Circles[] newcirles = new Circles [99];
+		
 		int numberpoint = 0;
 		int numbercircles = 0;
 		
+		String pointbuff = WriteAndReade.readpoints();
+		if (pointbuff != null) {
+			String[] pointstart = pointbuff.split(",");
+			for (int i =0; i < pointstart.length; i += 2)
+			{	
+				int y = Integer.valueOf(pointstart[i+1]);
+				int x = Integer.valueOf(pointstart[i]);
+				newpoints[numberpoint] = new Points(x,y); 
+				numberpoint ++;
+			}
+		}
+		String circlesbuff = WriteAndReade.readcircles();
+		if (circlesbuff != null) {
+		String[] circlesstart = circlesbuff.split(",");
+		for (int i =0; i < circlesstart.length; i += 3)
+			{	
+				int y = Integer.valueOf(circlesstart[i+1]);
+				int x = Integer.valueOf(circlesstart[i]);
+				int r = Integer.valueOf(circlesstart[i + 2]);
+				Points buff = new Points(x,y); 
+				newcirles[numbercircles] = new Circles (buff,r);
+				numbercircles++;
+			}
+		}
 		boolean work = true;
 		while (work) {
 			Scanner in = new Scanner(System.in);
@@ -21,7 +46,7 @@ public class Main {
 			System.out.println("Для вывода на экран содержимого списка окружностей введите : 4");
 			System.out.println("Для удаления точки введите : 5");
 			System.out.println("Для удаления окружности  введите : 6");
-			System.out.println("Для вывода всех точек находящихся в окружности введите: 7");
+			System.out.println("Для записи точек и окружностей в файл: 7");
 			System.out.print("Ваш выбор : ");
 	        int num = in.nextInt();
 			switch(num) {
@@ -187,6 +212,9 @@ public class Main {
 					break;
 				}
 			case 7 :
+				String x_x = in.nextLine();
+				String file = in.nextLine();
+				WriteAndReade.writeforuser(newpoints,newcirles,numberpoint,numbercircles,file);
 				break;
 			default:
 				System.out.println("Введен неверный параметр");
