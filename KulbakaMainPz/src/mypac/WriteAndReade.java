@@ -57,11 +57,12 @@ public class WriteAndReade {
 			for(int i = 0; i < kolvo1; i++) {
 	        String buff = poi[i].drowuser();
 	        writer.write(buff);
+	        writer.append("\n");
 			}
-			writer.append("\n");
 			for(int i = 0; i < kolvo2; i++) {
 		        String buff = cir[i].drowuser();
 		        writer.write(buff);
+		        writer.append("\n");
 				}
 		}
 	    catch(IOException ex){
