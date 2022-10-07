@@ -214,7 +214,9 @@ public class Main {
 			case 7 :
 				String x_x = in.nextLine();
 				String file = in.nextLine();
-				WriteAndReade.writeforuser(newpoints,newcirles,numberpoint,numbercircles,file);
+				System.out.print("Как вывести массив первозданный, в порядке увелечения / уменьшение [1,2/3]");
+				int choice1 = in.nextInt();
+				WriteAndReade.writeforuser(newpoints,newcirles,numberpoint,numbercircles,file,choice1);
 				break;
 			default:
 				System.out.println("Введен неверный параметр");

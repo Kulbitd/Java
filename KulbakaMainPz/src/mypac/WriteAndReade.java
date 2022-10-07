@@ -1,7 +1,7 @@
 package mypac;
 
 import java.io.*;
-import java.util.Scanner;
+import java.io.IOException;
 
 public class WriteAndReade {
 	public static void writespoints(Points[] poi,Circles[] cir,int kolvo1,int kolvo2) {
@@ -51,7 +51,11 @@ public class WriteAndReade {
             return "";
         	}   
     } 
-	public static void writeforuser(Points[] poi,Circles[] cir,int kolvo1,int kolvo2,String adres) {
+	public static void writeforuser(Points[] poi,Circles[] cir,int kolvo1,int kolvo2,String adres,int choise) {
+		File file = new File(adres);
+		if (file.exists()) {
+		switch(choise) {
+		case 1:
 		try(FileWriter writer = new FileWriter(adres, false))
 	    {
 			for(int i = 0; i < kolvo1; i++) {
@@ -67,8 +71,57 @@ public class WriteAndReade {
 		}
 	    catch(IOException ex){
 	    	System.out.println(ex.getMessage());
-	    } 
-	} 
-	
-
+	    }
+		case 2:
+			Points[] bufffornotsort1 = new Points[poi.length];
+			System.arraycopy(poi, 0, bufffornotsort1, 0, bufffornotsort1.length);
+			bufffornotsort1 = Sort.pointsortincrease(bufffornotsort1,kolvo1);
+			
+			Circles[] bufffornotsort2 = new Circles[cir.length];
+			System.arraycopy(cir, 0, bufffornotsort2, 0, bufffornotsort2.length);
+			bufffornotsort2 = Sort.circlessortincrease(bufffornotsort2,kolvo2);
+			try(FileWriter writer = new FileWriter(adres, false))
+		    {
+				for(int i = 0; i < kolvo1; i++) {
+			        String buff = bufffornotsort1[i].drowuser();
+			        writer.write(buff);
+			        writer.append("\n");
+				}
+				for(int i = 0; i < kolvo2; i++) {
+			        String buff = bufffornotsort2[i].drowuser();
+			        writer.write(buff);
+			        writer.append("\n");
+					}
+			}
+		    catch(IOException ex){
+		    	System.out.println(ex.getMessage());
+		    }
+		case 3:
+			Points[] bufffsort1 = new Points[poi.length];
+			System.arraycopy(poi, 0, bufffsort1, 0, bufffsort1.length);
+			bufffornotsort1 = Sort.pointsort(bufffsort1,kolvo1);
+			
+			Circles[] buffsort2 = new Circles[cir.length];
+			System.arraycopy(cir, 0, buffsort2, 0, buffsort2.length);
+			bufffornotsort2 = Sort.circlessort(buffsort2,kolvo2);
+			try(FileWriter writer = new FileWriter(adres, false))
+		    {
+				for(int i = 0; i < kolvo1; i++) {
+			        String buff = bufffornotsort1[i].drowuser();
+			        writer.write(buff);
+			        writer.append("\n");
+				}
+				for(int i = 0; i < kolvo2; i++) {
+			        String buff = bufffornotsort2[i].drowuser();
+			        writer.write(buff);
+			        writer.append("\n");
+					}
+			}
+		    catch(IOException ex){
+		    	System.out.println(ex.getMessage());
+		    }
+		}
+		System.out.println("Файл не найден");
+		}
+	}
 }
